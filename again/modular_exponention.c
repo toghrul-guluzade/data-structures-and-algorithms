@@ -32,15 +32,10 @@ long long powmod(long long x, long long n, long long mod){
 
     if(n == 0) return 1;
 
-    long long half;
-
-    if(n % 2 == 0){
-      half = powmod(x, n/2, mod);
-      return (half * 2) % mod;
-    } else {
-      half = powmod(x, (n-1)/2, mod);
-      return (x*(2*half)) % mod;
-    }
+    long long half = powmod(x, n/2, mod);
+      half = (half * half) % mod;
+    if(n % 2 == 1) half = x * half % mod;
+      return half;
     
 }
 
