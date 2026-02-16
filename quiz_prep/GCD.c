@@ -9,7 +9,7 @@ long long gcd(long long a, long long b){
     if(a >= b){
         return gcd(a % b, b);
     } else{
-        return gcd(a, b % a);
+        returngcd(a, b % a);
     }
         
 }
