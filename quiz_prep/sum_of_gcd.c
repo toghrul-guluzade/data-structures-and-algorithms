@@ -20,7 +20,6 @@ int main(){
 
     int n, cnt;
 
-    scanf("%d", &n);
     int line[100];
     
     while(n){
