@@ -20,17 +20,37 @@ int main(){
             q.push_back(n);
             std::cout << "ok\n";
         } else if(cmd == "pop_front"){
-            n = q.front();
-            q.pop_front();
+            if(q.size() != 0){
+                n = q.front();
+                q.pop_front();
+            } else{
+                std::cout << "error\n";
+                continue;
+            }
             std::cout << n << '\n';
         } else if(cmd == "pop_back"){
-            n = q.back();
-            q.pop_back();
+            if(q.size() != 0){
+                n = q.back();
+                q.pop_back();
+            } else {
+                std::cout << "error\n";
+                continue;
+            }
             std::cout << n << '\n';
         } else if(cmd == "front"){
-            std::cout << q.front() << '\n';
+            if(q.size() != 0){
+                std::cout << q.front() << '\n';
+            } else {
+                std::cout << "error\n";
+                continue;
+            }
         } else if(cmd == "back"){
-            std::cout << q.back() << '\n';
+            if(q.size() != 0){
+                std::cout << q.back() << '\n';
+            } else{
+                std::cout << "error\n";
+                continue;
+            }
         } else if(cmd == "size"){
             std::cout << q.size() << '\n';
         } else if(cmd == "clear"){
