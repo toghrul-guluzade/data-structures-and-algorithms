@@ -6,25 +6,48 @@
 
 int main(){
 
-    std::stack<char> s;
+
     char bracket;
 
-    while((std::cin >> bracket)){
-        if(bracket == '('){
-            s.push('(');
-        } else if(bracket == ')'){
-            if(s.empty()){
-                std::cout << "NO" << "\n";
-                return 0;
-            }
-            s.pop();
-        }
-    }
+    int cnt; 
+    std::cin >> cnt;
+    std::cin.ignore(1000, '\n');
 
-    if(s.size() == 0){
-        std::cout << "YES" << "\n";
-    } else{
-        std::cout << "NO" << "\n";
+    
+    while(cnt){
+
+        std::stack<char> s;
+        std::string line;
+        std::getline(std::cin, line);
+
+        bool status = true;
+
+        for(char c : line){
+            if(c == '(' || c == '['){
+                s.push(c);
+            } else if (c == ')'){
+                if(s.empty() || s.top() != '('){
+                    status = false;
+                    break;
+                }
+                s.pop();
+            } else if(c == ']'){
+                if(s.empty() || s.top() != '['){
+                  status = false;
+                  break;
+                } 
+                s.pop();
+            }
+        }
+
+
+        if(s.size() == 0 && status){
+            std::cout << "Yes" << "\n";
+        } else{
+            std::cout << "No" << "\n";
+        }
+
+        cnt--;
     }
 
 

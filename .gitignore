@@ -1,0 +1,32 @@
+# Executables
+*.exe
+*.out
+*.app
+
+# Object files
+*.o
+*.obj
+
+# Static / dynamic libraries
+*.a
+*.so
+*.dll
+*.dylib
+
+# GCC / G++ temporary files
+*.gch
+
+# Build directories
+build/
+bin/
+out/
+
+# Debug filestou
+*.log
+
+# VSCode settings
+.vscode/
+
+# OS generated files
+.DS_Store
+Thumbs.db
