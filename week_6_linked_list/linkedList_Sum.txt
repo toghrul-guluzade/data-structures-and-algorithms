@@ -1,0 +1,9 @@
+int sum(ListNode *head)
+{
+    int total = 0;
+    while(head != NULL){
+        total += head -> val;
+        head = head -> next;
+    }
+    return total;
+}
