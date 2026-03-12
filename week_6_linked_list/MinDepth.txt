@@ -1,0 +1,19 @@
+int minDepth(TreeNode *tree)
+{
+    if(tree == NULL) return 0;
+    if(tree -> right == NULL){
+        return minDepth(tree -> left) + 1;
+    }
+    if(tree -> left == NULL){
+        return minDepth(tree -> right) + 1;
+    }
+
+    int minRight = minDepth(tree -> right);
+    int minLeft = minDepth(tree -> left);
+
+    if(minLeft < minRight){
+    return minLeft + 1;
+    } else{
+    return minRight + 1;
+    }
+}

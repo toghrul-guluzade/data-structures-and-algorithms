@@ -1,0 +1,19 @@
+TreeNode *Prev(TreeNode *tree)
+{
+  
+    if(tree -> left != NULL){
+        TreeNode *curr = tree -> left;
+        while(curr -> right != NULL){
+            curr = curr -> right;
+        }
+        return curr;
+    }
+
+    TreeNode *prev = tree -> parent;
+    while((prev != NULL) && (tree == prev -> left)){
+        tree = prev;
+        prev = prev -> parent;
+    }
+    return prev;
+
+}

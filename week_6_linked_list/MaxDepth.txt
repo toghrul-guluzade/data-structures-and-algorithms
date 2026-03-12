@@ -1,0 +1,20 @@
+int maxDepth(TreeNode *tree)
+{
+    if(tree == NULL) return 0;
+    
+    if(tree -> right == NULL){
+        return maxDepth(tree -> left) + 1;
+    }
+    if(tree -> left == NULL){
+        return maxDepth(tree ->  right) + 1;
+    }
+
+    int maxRight = maxDepth(tree -> right);
+    int maxLeft = maxDepth(tree -> left);
+
+    if(maxRight >= maxLeft){
+        return maxRight + 1;
+    } else{
+        return maxLeft + 1;
+    }
+}
